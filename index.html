@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bilgi Yarışması Oyunu</title>
+
+
+    <script>
+
+        let sorular = [
+
+            {
+                "soru": "Hangi renk trafik lambasında ileri git anlamına gelir?",
+                "a_sikki": "Kırmızı ",
+                "b_sikki": "Yeşil ",
+                "c_sikki": " Sarı",
+                "d_sikki": "Mavi",
+                "cevap": " B "
+            },
+
+
+            {
+                "soru": " Ay hangi gök cisminin uydusudur?",
+                "a_sikki": "  Mars",
+                "b_sikki": " Dünya",
+                "c_sikki": "  Venüs",
+                "d_sikki": " Jüpiter",
+                "cevap": " B "
+            },
+
+
+
+            {
+                "soru": "Elma hangi tür bir meyvedir? ",
+                "a_sikki": "Narenciye ",
+                "b_sikki": "Koyu Yeşil ",
+                "c_sikki": "Taş Meyve ",
+                "d_sikki": "Kuru Meyve ",
+                "cevap": "C "
+            },
+
+
+
+            {
+                "soru": "Hangi hayvanın eti genellikle sucuk yapımında kullanılır?",
+                "a_sikki": "Tavuk ",
+                "b_sikki": "Balık ",
+                "c_sikki": "Kuzu ",
+                "d_sikki": "Dana ",
+                "cevap": " D "
+            }
+            ,
+
+            {
+                "soru": "Bir insanın sahip olduğu en çok parmak sayısı kaçtır?",
+                "a_sikki": "3",
+                "b_sikki": "4 ",
+                "c_sikki": " 5",
+                "d_sikki": " 6",
+                "cevap": " C "
+            },
+
+            {
+                "soru": "Hangi element periyodik tabloda 'H' harfi ile simgelenir? ",
+                "a_sikki": "Hidrojen ",
+                "b_sikki": "Helyum ",
+                "c_sikki": " Hafnium",
+                "d_sikki": "Holmiyum ",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": "'Romeo ve Juliet' eseri hangi yazarın kaleminden çıkmıştır? ",
+                "a_sikki": "Charles Dickens ",
+                "b_sikki": " Jane Austen",
+                "c_sikki": " William Shakespeare",
+                "d_sikki": " Leo Tolstoy",
+                "cevap": " C "
+            },
+
+
+            {
+                "soru": "Dünya üzerinde kaç kıta bulunmaktadır? ",
+                "a_sikki": " 4",
+                "b_sikki": "5 ",
+                "c_sikki": " 6",
+                "d_sikki": " 7",
+                "cevap": " B "
+            },
+
+
+            {
+                "soru": "Hangi renk Türk bayrağının renk oluşumunda bulunmaz? ",
+                "a_sikki": " Kırmızı",
+                "b_sikki": " Beyaz",
+                "c_sikki": " Mavi",
+                "d_sikki": " Sarı",
+                "cevap": " D "
+            },
+
+
+            {
+                "soru": "Hangi gezegen atmosferinde sıvı su bulunabilir? ",
+                "a_sikki": " Mars",
+                "b_sikki": " Venüs",
+                "c_sikki": "Jüpiter ",
+                "d_sikki": "Dünya ",
+                "cevap": " D "
+            },
+
+
+            {
+                "soru": "Hangi gezegen 'Kırmızı Gezegen' olarak da bilinir?",
+                "a_sikki": " Venüs",
+                "b_sikki": "Mars ",
+                "c_sikki": " Jüpiter",
+                "d_sikki": "Uranüs ",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "Hangi yıl Türkiye'de Cumhuriyet ilan edilmiştir? ",
+                "a_sikki": "1921 ",
+                "b_sikki": " 1922",
+                "c_sikki": " 1923",
+                "d_sikki": "1924 ",
+                "cevap": " D "
+            },
+
+            {
+                "soru": " Bir olimpiyat yarışmasında hangi renk madalya birinciliği simgeler?",
+                "a_sikki": "Altın ",
+                "b_sikki": "Gümüş ",
+                "c_sikki": " Bronz",
+                "d_sikki": "Platin ",
+                "cevap": " A "
+            }
+            ,
+            {
+                "soru": "Hangi renk üç temel renkten biri değildir?",
+                "a_sikki": " Kırmızı",
+                "b_sikki": " Mavi ",
+                "c_sikki": " Yeşil",
+                "d_sikki": " Sarı",
+                "cevap": " D "
+            },
+
+            {
+                "soru": "'İstiklal Marşı' hangi Türk şair tarafından yazılmıştır?",
+                "a_sikki": "  Tevfik Fikret",
+                "b_sikki": "Yahya Kemal Beyatlı ",
+                "c_sikki": "Mehmet Âkif Ersoy ",
+                "d_sikki": " Cemal Süreya",
+                "cevap": " C "
+            },
+
+            {
+                "soru": "Dünyanın en uzun nehri hangisidir? ",
+                "a_sikki": "  Nil Nehri",
+                "b_sikki": "Amazon Nehri ",
+                "c_sikki": " Yangtze Nehri ",
+                "d_sikki": " Mississippi Nehri",
+                "cevap": " A "
+            },
+
+            {
+                "soru": " Hangi gezegen Güneş Sistemi'nde üçüncü sıradadır? ",
+                "a_sikki": "Mars ",
+                "b_sikki": " Jüpiter",
+                "c_sikki": "Dünya ",
+                "d_sikki": " Venüs",
+                "cevap": " C "
+            },
+
+            {
+                "soru": "Atatürk'ün doğum yeri neresidir? ",
+                "a_sikki": "Selanik",
+                "b_sikki": "İstanbul ",
+                "c_sikki": "Ankara ",
+                "d_sikki": "İzmir ",
+                "cevap": " A "
+            },
+
+            {
+                "soru": "İlk ayın ilk gününe ne ad verilir? ",
+                "a_sikki": " Yılbaşı",
+                "b_sikki": "Aybaşı ",
+                "c_sikki": "Günbaşı ",
+                "d_sikki": "Haftabaşı ",
+                "cevap": " A "
+            },
+
+            {
+                "soru": " Osmanlı İmparatorluğu hangi yılda kurulmuştur?",
+                "a_sikki": " 1206 ",
+                "b_sikki": " 1299 ",
+                "c_sikki": " 1453",
+                "d_sikki": " 1517 ",
+                "cevap": " B "
+            }
+
+        ];
+
+        // Kullanılacak değişkenler
+        let sorunun_cevabi = "";
+        let puan = 0;
+        let dogru_sayisi = 0;
+        let yanlis_sayisi = 0;
+        let soru_numarasi = 0;
+
+        function shuffleArray(array) {
+            // Fisher-Yates Shuffle algoritması
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function sorulariKaristir() {
+            // Soruları karıştır
+            shuffleArray(sorular);
+        }
+
+        function soru_getir(s_no) {
+          
+            if (s_no === 0) {
+                sorulariKaristir();
+            }
+
+            document.getElementById("soru_metni").innerHTML = sorular[s_no].soru;
+            document.getElementById("a_sikki").innerHTML = sorular[s_no].a_sikki;
+            document.getElementById("b_sikki").innerHTML = sorular[s_no].b_sikki;
+            document.getElementById("c_sikki").innerHTML = sorular[s_no].c_sikki;
+            document.getElementById("d_sikki").innerHTML = sorular[s_no].d_sikki;
+            sorunun_cevabi = sorular[s_no].cevap;
+        }
+
+        function skor_yaz() {
+            document.getElementById("d_sayisi").innerHTML = dogru_sayisi;
+            document.getElementById("y_sayisi").innerHTML = yanlis_sayisi;
+            document.getElementById("p_yazisi").innerHTML = puan;
+        }
+
+        function cevaplandi(hangi_sik) {
+           
+            if (soru_numarasi < 10) {
+                const kullanici_secimi = hangi_sik.getAttribute("data-secim");
+
+                if (sorunun_cevabi.trim().toUpperCase() === kullanici_secimi.trim().toUpperCase()) {
+                    puan = puan + 50;
+                    dogru_sayisi++;
+                    skor_yaz();
+                } else {
+                    puan = puan - 50;
+                    yanlis_sayisi++;
+                    skor_yaz();
+                }
+
+              
+                if (soru_numarasi === 9) {
+                    const nextLevelButton = document.createElement("button");
+                    nextLevelButton.textContent = "Next Level";
+                    nextLevelButton.onclick = function () {
+                        closeModal('yeniModal');
+                        openModal('acemiModal');
+                    };
+
+                    // Şıkları devre dışı bırak
+                    document.getElementById("a_sikki").onclick = null;
+                    document.getElementById("b_sikki").onclick = null;
+                    document.getElementById("c_sikki").onclick = null;
+                    document.getElementById("d_sikki").onclick = null;
+
+                    document.getElementById("soru_kutusu").appendChild(nextLevelButton);
+                }
+
+                // Soru numarası 'a ulaşmadıysa bir sonraki soruya geç
+                if (soru_numarasi < 9) {
+                    soru_ilerlet();
+                }
+            }
+        }
+
+        function soru_ilerlet() {
+            soru_numarasi++;
+            soru_getir(soru_numarasi);
+        }
+
+
+    </script>
+
+    <script>
+        
+
+        let acemi_sorular = [
+
+            {
+                "soru": "En büyük okyanus hangisidir?",
+                "a_sikki": " Hint Okyanusu ",
+                "b_sikki": "Atlas Okyanusu ",
+                "c_sikki": " Güney Okyanusu",
+                "d_sikki": "Pasifik Okyanusu",
+                "cevap": " D "
+            },
+
+
+            {
+                "soru": " İnsan vücudundaki en büyük organ nedir?",
+                "a_sikki": "   Kalp",
+                "b_sikki": " Beyin",
+                "c_sikki": " Karaciğer",
+                "d_sikki": " Cilt",
+                "cevap": " D "
+            },
+
+
+
+            {
+                "soru": " Ay'ın yüzeyindeki izler ve çukurlar ne adla anılır? ",
+                "a_sikki": "Gölette",
+                "b_sikki": "Kraterler",
+                "c_sikki": "Derinlikler",
+                "d_sikki": "Zirveler ",
+                "cevap": " B "
+            },
+
+
+
+            {
+                "soru": "Türkiye'nin en yüksek dağı hangisidir?",
+                "a_sikki": "Ağrı Dağı ",
+                "b_sikki": "Erciyes Dağı",
+                "c_sikki": "Tahtalı Dağ",
+                "d_sikki": "Uludağ",
+                "cevap": " A "
+            }
+            ,
+
+            {
+                "soru": "Hangi gezegenin bir günü ve bir yılı eşittir?",
+                "a_sikki": "Venüs",
+                "b_sikki": "Mars",
+                "c_sikki": " Jüpiter",
+                "d_sikki": " Satürn",
+                "cevap": " A "
+            },
+
+            {
+                "soru": "Hangi gezegen adını Roma mitolojisindeki tanrıdan alır? ",
+                "a_sikki": "Merkür",
+                "b_sikki": "Venüs",
+                "c_sikki": " Mars",
+                "d_sikki": "Jüpiter",
+                "cevap": " C "
+            },
+
+
+            {
+                "soru": "Hangi renk karıştırılarak mor elde edilir? ",
+                "a_sikki": "Kırmızı ve Mavi",
+                "b_sikki": " Sarı ve Mavi",
+                "c_sikki": "  Kırmızı ve Yeşil",
+                "d_sikki": " Sarı ve Kırmızı",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": "Bir hayvanın evrim geçirerek kuşlara dönüştüğü teorisini destekleyen isim aşağıdakilerden hangisidir?",
+                "a_sikki": " Newton",
+                "b_sikki": "Galileo",
+                "c_sikki": " Darwin",
+                "d_sikki": " Pasteur",
+                "cevap": " C "
+            },
+
+
+            {
+                "soru": "Hangi gezegen en büyük atmosfer hacmine sahiptir? ",
+                "a_sikki": " Jüpiter",
+                "b_sikki": " Mars",
+                "c_sikki": " Venüs",
+                "d_sikki": " Uranüs",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": "Hangi gezegen atmosferinde sıvı su bulunabilir? ",
+                "a_sikki": " Mars",
+                "b_sikki": " Venüs",
+                "c_sikki": "Jüpiter ",
+                "d_sikki": "Dünya ",
+                "cevap": " D "
+            },
+
+
+            {
+                "soru": "İstanbul hangi iki kıtanın arasında yer alır?",
+                "a_sikki": " Asya ve Afrika",
+                "b_sikki": "Avrupa ve Asya",
+                "c_sikki": " Avrupa ve Afrika",
+                "d_sikki": "Asya ve Okyanusya ",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "Hangi ülkenin başkenti Oslo'dur? ",
+                "a_sikki": "İsveç ",
+                "b_sikki": " Danimarka",
+                "c_sikki": " Norveç",
+                "d_sikki": "Finlandiya",
+                "cevap": " C "
+            },
+
+            {
+                "soru": "Hangi element 'O' harfi ile kimyasal sembolize sahiptir?",
+                "a_sikki": " Altın",
+                "b_sikki": "Karbon",
+                "c_sikki": "Oksijen",
+                "d_sikki": "Demir",
+                "cevap": " C "
+            }
+            ,
+            {
+                "soru": "'Çavdar Tarlasında Çocuklar'adlı kitabın yazarı kimdir?",
+                "a_sikki": " Jane Austen",
+                "b_sikki": " J.D. Salinger",
+                "c_sikki": " Charles Dickens",
+                "d_sikki": " Fyodor Dostoyevski",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "'Aya Yolculuk' programları hangi ülkenin uzay ajansı tarafından gerçekleştirilmiştir?",
+                "a_sikki": "  Rusya",
+                "b_sikki": " ABD ",
+                "c_sikki": "Çin",
+                "d_sikki": " Hindistan",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "Hangi yıl Türkiye'de ilk yerli otomobil üretildi?",
+                "a_sikki": "1961",
+                "b_sikki": "1972",
+                "c_sikki": " 1984 ",
+                "d_sikki": "1995",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "'Pi sayısı'yaklaşık olarak kaçtır? ",
+                "a_sikki": "2,14 ",
+                "b_sikki": " 3,14",
+                "c_sikki": " 4,14",
+                "d_sikki": "  5,14",
+                "cevap": " B  "
+            },
+
+            {
+                "soru": "Hangi ünlü ressam 'Gece Devriyes' adlı tablosuyla tanınır? ",
+                "a_sikki": "Claude Monet",
+                "b_sikki": "Vincent van Gogh",
+                "c_sikki": " Edvard Munch",
+                "d_sikki": "Pablo Picasso",
+                "cevap": " C "
+            },
+
+            {
+                "soru": "Hangi gezegenin adı Roma mitolojisinin tanrısından gelir ve halk arasında 'Akşam Yıldızı'olarak bilinir? ",
+                "a_sikki": "  Mars",
+                "b_sikki": "Venüs ",
+                "c_sikki": "Jüpiter ",
+                "d_sikki": "Merkür",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "Hangi yazar 'Küçük Prens' adlı eserin yazarıdır?",
+                "a_sikki": " Antoine de Saint-Exupéry",
+                "b_sikki": " J.K. Rowling ",
+                "c_sikki": "  Charles Dickens",
+                "d_sikki": " Leo Tolstoy ",
+                "cevap": " A "
+            }
+
+        ];
+        // Kullanılacak değişkenler
+        let acemi_sorunun_cevabi = "";
+        let acemi_puan = 0;
+        let acemi_dogru_sayisi = 0;
+        let acemi_yanlis_sayisi = 0;
+        let acemi_soru_numarasi = 0;
+
+
+        function acemi_shuffleArray(array) {
+           
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        function acemi_sorulariKaristir() {
+            // Soruları karıştır
+            shuffleArray(acemi_sorular);
+        }
+
+        function acemi_soru_getir(acemi_s_no) {
+            // Soruları karıştır sadece ilk defa çağrıldığında
+            if (acemi_s_no === 0) {
+                acemi_sorulariKaristir();
+            }
+
+            document.getElementById("soru_metni_acemi").innerHTML = acemi_sorular[acemi_s_no].soru;
+            document.getElementById("a_sikki_acemi").innerHTML = acemi_sorular[acemi_s_no].a_sikki;
+            document.getElementById("b_sikki_acemi").innerHTML = acemi_sorular[acemi_s_no].b_sikki;
+            document.getElementById("c_sikki_acemi").innerHTML = acemi_sorular[acemi_s_no].c_sikki;
+            document.getElementById("d_sikki_acemi").innerHTML = acemi_sorular[acemi_s_no].d_sikki;
+            acemi_sorunun_cevabi = acemi_sorular[acemi_s_no].cevap;
+
+        }
+
+        function acemi_skor_yaz() {
+            document.getElementById("d_sayisi_acemi").innerHTML = acemi_dogru_sayisi;
+            document.getElementById("y_sayisi_acemi").innerHTML = acemi_yanlis_sayisi;
+            document.getElementById("p_yazisi_acemi").innerHTML = acemi_puan;
+        }
+
+        function acemi_cevaplandi(hangi_sik) {
+          
+            if (acemi_soru_numarasi < 10) {
+                const acemi_kullanici_secimi = hangi_sik.getAttribute("data-secim");
+
+                if (acemi_sorunun_cevabi.trim().toUpperCase() === acemi_kullanici_secimi.trim().toUpperCase()) {
+                    acemi_puan = acemi_puan + 50;
+                    acemi_dogru_sayisi++;
+                    acemi_skor_yaz();
+                } else {
+                    acemi_puan = acemi_puan - 50;
+                    acemi_yanlis_sayisi++;
+                    acemi_skor_yaz();
+                }
+
+              
+                if (acemi_soru_numarasi === 9) {
+                    const nextLevelButton = document.createElement("button");
+                    nextLevelButton.textContent = "Next Level";
+                    nextLevelButton.onclick = function () {
+                        closeModal('acemiModal');
+                        openModal('gelisenModal');
+                    };
+
+                    // Şıkları devre dışı bırak
+                    document.getElementById("a_sikki_acemi").onclick = null;
+                    document.getElementById("b_sikki_acemi").onclick = null;
+                    document.getElementById("c_sikki_acemi").onclick = null;
+                    document.getElementById("d_sikki_acemi").onclick = null;
+
+                    document.getElementById("soru_kutusu_acemi").appendChild(nextLevelButton);
+                }
+
+                // Soru numarası 'a ulaşmadıysa bir sonraki soruya geç
+                if (acemi_soru_numarasi < 9) {
+                    acemi_soru_ilerlet();
+                }
+            }
+        }
+
+        function acemi_soru_ilerlet() {
+            acemi_soru_numarasi++;
+            acemi_soru_getir(acemi_soru_numarasi);
+        }
+
+    </script>
+    <script>
+
+        gelisen_sorular = [
+
+            {
+                "soru": "Hangi ünlü bilim adamı 'E=mc^2' formülünü ortaya koymuştur?",
+                "a_sikki": " Albert Einstein",
+                "b_sikki": "Isaac Newton",
+                "c_sikki": " Galileo Galilei",
+                "d_sikki": "Nikola Tesla",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": " 'Madam Curie' hangi bilim dalında öne çıkan bir isimdir? ",
+                "a_sikki": "  Biyoloji ",
+                "b_sikki": "Kimya ",
+                "c_sikki": " Fizik",
+                "d_sikki": " Astronomi",
+                "cevap": " B "
+            },
+
+
+
+            {
+                "soru": "Hangi ülke, matematiğin '0' rakamını icat etmiştir?  ",
+                "a_sikki": "Çin",
+                "b_sikki": "Hint",
+                "c_sikki": "Mısır",
+                "d_sikki": "Yunan",
+                "cevap": " B "
+            },
+
+
+
+            {
+                "soru": " 'La Guernica' adlı tablo hangi ünlü ressam tarafından yapılmıştır?",
+                "a_sikki": "Pablo Picasso",
+                "b_sikki": "Salvador Dalí",
+                "c_sikki": "Leonardo da Vinci",
+                "d_sikki": "Vincent van Gogh",
+                "cevap": " A "
+            }
+            ,
+
+            {
+                "soru": " Hangi ünlü müzik grubu 'Bohemian Rhapsody' şarkısıyla tanınır?",
+                "a_sikki": "The Rolling Stones",
+                "b_sikki": "The Beatles",
+                "c_sikki": " Queen",
+                "d_sikki": " Led Zeppelin",
+                "cevap": " C "
+            },
+
+            {
+                "soru": "'Kilometre Taşı' ifadesi hangi anlamı taşır? ",
+                "a_sikki": "Yol gösteren işaret",
+                "b_sikki": "Önemli bir dönemeç",
+                "c_sikki": " Hız sınırlaması",
+                "d_sikki": "Uzaklık birimi",
+                "cevap": " B "
+            },
+
+
+            {
+                "soru": " Hangi ünlü fizikçi 'Schrodinger'in Kedisi' teorisini ortaya atmıştır? ",
+                "a_sikki": "Erwin Schrödinger",
+                "b_sikki": " Niels Bohr",
+                "c_sikki": " Max Planck",
+                "d_sikki": " Werner Heisenberg",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": "  'Uzak Doğu'nun Kapısı' olarak bilinen şehir hangisidir?",
+                "a_sikki": "  Pekin",
+                "b_sikki": "Tokyo",
+                "c_sikki": " Seoul",
+                "d_sikki": " Hong Kong",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": "Hangi yazar 'Sefiller' adlı eserin yazarıdır? ",
+                "a_sikki": " Leo Tolstoy",
+                "b_sikki": " Victor Hugo",
+                "c_sikki": " Fyodor Dostoyevski",
+                "d_sikki": " Charles Dickens",
+                "cevap": " B "
+            },
+
+
+            {
+                "soru": "Hangi yıl İstanbul'un fethi gerçekleşmiştir?",
+                "a_sikki": " 1453",
+                "b_sikki": " 1492",
+                "c_sikki": "1520 ",
+                "d_sikki": "1607 ",
+                "cevap": " A "
+            },
+
+
+            {
+                "soru": " Hangi matematiksel sabit, doğadaki birçok olguyu açıklamada kullanılır?",
+                "a_sikki": "  Pi (π)",
+                "b_sikki": "Euler sayısı (e)",
+                "c_sikki": " Altın oran (φ)",
+                "d_sikki": "Karekök i (√i) ",
+                "cevap": " A "
+            },
+
+            {
+                "soru": "'Dorian Gray'in Portresi' adlı eserin yazarı kimdir?",
+                "a_sikki": "Charles Dickens ",
+                "b_sikki": " Oscar Wilde",
+                "c_sikki": " Fyodor Dostoyevski",
+                "d_sikki": "Jane Austen",
+                "cevap": " B "
+            },
+
+            {
+                "soru": "'Bütün insanlar eşit doğar' ifadesi hangi bildirgeden alınmıştır?",
+                "a_sikki": " Magna Carta",
+                "b_sikki": "Amerikan Bağımsızlık Bildirgesi",
+                "c_sikki": "İnsan Hakları Bildirgesi",
+                "d_sikki": "Kodeks Hammurabi",
+                "cevap": " B "
+            }
+            ,
+            {
+                "soru": " Hangi ünlü fizik yasası, bir gazın basıncının hacmi ve sıcaklık ile orantılı olduğunu ifade eder?",
+                "a_sikki": " Boyle's Yasası",
+                "b_sikki": " Archimedes Prensibi",
+                "c_sikki": " Bernoulli Prensibi",
+                "d_sikki": " Pascal'ın Prensibi",
+                "cevap": " A "
+            },
+
+            {
+                "soru": " 'İki Şehir' romanının yazarı kimdir?",
+                "a_sikki": " Victor Hugo ",
+                "b_sikki": "Charles Dickens ",
+                "c_sikki": " Leo Tolstoy",
+                "d_sikki": " Fyodor Dostoyevski",
+                "cevap": " B "
+            },
+            {
+                "soru": "'Dünya Nüfus Günü' hangi tarihte kutlanır? ",
+                "a_sikki": "11 Temmuz",
+                "b_sikki": " 11 Ağustos",
+                "c_sikki": "11 Ekim",
+                "d_sikki": "11 Aralık",
+                "cevap": " C "
+            },
+            {
+                "soru": " 'Kaos Teorisi' hangi bilim dalı ile ilgilenir? ",
+                "a_sikki": " Biyoloji",
+                "b_sikki": " Fizik",
+                "c_sikki": "Matematik",
+                "d_sikki": " Astronomi",
+                "cevap": " C "
+            },
+            {
+                "soru": " Hangi yıl Amerika'da bağımsızlık ilan edilmiştir?",
+                "a_sikki": " 1776 ",
+                "b_sikki": "1789 ",
+                "c_sikki": " 1804",
+                "d_sikki": " 1821",
+                "cevap": " A "
+            },
+            {
+                "soru": "Hangi tarih, Fransız Devrimi'nin başladığını işaret eder? ",
+                "a_sikki": " 1776 ",
+                "b_sikki": "1804 ",
+                "c_sikki": "1789",
+                "d_sikki": " 1832",
+                "cevap": " C "
+            },
+            {
+                "soru": "Hangi ünlü bilim adamı, genel görelilik teorisini formüle etmiştir? ",
+                "a_sikki": " Isaac Newton ",
+                "b_sikki": " Niels Bohr",
+                "c_sikki": "Galileo Galilei",
+                "d_sikki": "Albert Einstein",
+                "cevap": " D "
+            },
+
+
+
+        ];
+        // Kullanılacak değişkenler
+        let gelisen_sorunun_cevabi = "";
+        let gelisen_puan = 0;
+        let gelisen_dogru_sayisi = 0;
+        let gelisen_yanlis_sayisi = 0;
+        let gelisen_soru_numarasi = 0;
+
+
+        function gelisen_shuffleArray(array) {
+            
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+
+        function gelisen_sorulariKaristir() {
+            // Soruları karıştır
+            gelisen_shuffleArray(acemi_sorular);
+        }
+
+        function gelisen_soru_getir(gelisen_s_no) {
+            if (gelisen_s_no === 0) {
+                gelisen_sorulariKaristir();
+            }
+
+            document.getElementById("soru_metni_gelisen").innerHTML = gelisen_sorular[gelisen_s_no].soru;
+            document.getElementById("a_sikki_gelisen").innerHTML = gelisen_sorular[gelisen_s_no].a_sikki;
+            document.getElementById("b_sikki_gelisen").innerHTML = gelisen_sorular[gelisen_s_no].b_sikki;
+            document.getElementById("c_sikki_gelisen").innerHTML = gelisen_sorular[gelisen_s_no].c_sikki;
+            document.getElementById("d_sikki_gelisen").innerHTML = gelisen_sorular[gelisen_s_no].d_sikki;
+            gelisen_sorunun_cevabi = gelisen_sorular[gelisen_s_no].cevap;
+        }
+
+        function gelisen_skor_yaz() {
+            document.getElementById("d_sayisi_gelisen").innerHTML = gelisen_dogru_sayisi;
+            document.getElementById("y_sayisi_gelisen").innerHTML = gelisen_yanlis_sayisi;
+            document.getElementById("p_yazisi_gelisen").innerHTML = gelisen_puan;
+        }
+
+        function gelisen_cevaplandi(hangi_sik) {
+            if (gelisen_soru_numarasi < 10) {
+                const gelisen_kullanici_secimi = hangi_sik.getAttribute("data-secim");
+
+                if (gelisen_sorunun_cevabi.trim().toUpperCase() === gelisen_kullanici_secimi.trim().toUpperCase()) {
+                    gelisen_puan = gelisen_puan + 50;
+                    gelisen_dogru_sayisi++;
+                    gelisen_skor_yaz();
+                } else {
+                    gelisen_puan = gelisen_puan - 50;
+                    gelisen_yanlis_sayisi++;
+                    gelisen_skor_yaz();
+                }
+
+                if (gelisen_soru_numarasi === 9) {
+                    const nextLevelButton = document.createElement("button");
+                    nextLevelButton.textContent = "Next Level";
+                    nextLevelButton.onclick = function () {
+                        closeModal('gelisenModal');
+                        openModal('uzmanadayiModal');
+                    };
+
+                    document.getElementById("a_sikki_gelisen").onclick = null;
+                    document.getElementById("b_sikki_gelisen").onclick = null;
+                    document.getElementById("c_sikki_gelisen").onclick = null;
+                    document.getElementById("d_sikki_gelisen").onclick = null;
+
+                    document.getElementById("soru_kutusu_gelisen").appendChild(nextLevelButton);
+                }
+
+                if (gelisen_soru_numarasi < 9) {
+                    gelisen_soru_ilerlet();
+                }
+            }
+        }
+
+        function gelisen_soru_ilerlet() {
+            gelisen_soru_numarasi++;
+            gelisen_soru_getir(gelisen_soru_numarasi);
+        }
+
+
+    </script>
+
+    <script>
+        uzmanadayi_sorular = [
+
+            {
+                "soru": "Hangi ünlü ressam, 'Guernica' adlı tablosuyla tanınır?",
+                "a_sikki": "Claude Monet",
+                "b_sikki": "Vincent van Gogh",
+                "c_sikki": "Salvador Dalí",
+                "d_sikki": "Pablo Picasso",
+                "cevap": "D"
+            }
+            ,
+
+            {
+                "soru": "Hangi yazar 'Suç ve Ceza' adlı eserin yazarıdır?",
+                "a_sikki": "Leo Tolstoy",
+                "b_sikki": "Fyodor Dostoyevski",
+                "c_sikki": "Jane Austen",
+                "d_sikki": "Charles Dickens",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü matematikçi, Fibonacci dizisiyle bilinir?",
+                "a_sikki": "Euclid",
+                "b_sikki": "Pythagoras",
+                "c_sikki": "Archimedes",
+                "d_sikki": "Leonardo Fibonacci",
+                "cevap": "D"
+            }
+            ,
+            {
+                "soru": "Hangi tarih, Amerika'da Bağımsızlık Bildirisi'nin kabul edildiği tarihi işaret eder?",
+                "a_sikki": "1774",
+                "b_sikki": "1776",
+                "c_sikki": "1789",
+                "d_sikki": "1803",
+                "cevap": "B"
+            }
+            ,
+
+            {
+                "soru": "Hangi ünlü fizik yasası, elektromanyetik alanın değişimine ilişkin Maxwell denklemlerini ifade eder?",
+                "a_sikki": "Ampère Kanunu",
+                "b_sikki": "Gauss'un Yasası",
+                "c_sikki": "Faraday'ın Indüksiyon Yasası",
+                "d_sikki": "Biot-Savart Yasası",
+                "cevap": "C"
+            }
+            ,
+
+            {
+                "soru": "Hangi ünlü besteci, 'Ode to Joy' adlı eseriyle tanınır?",
+                "a_sikki": "Ludwig van Beethoven",
+                "b_sikki": "Wolfgang Amadeus Mozart",
+                "c_sikki": "Johann Sebastian Bach",
+                "d_sikki": "Pyotr Ilyich Tchaikovsky",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ülkenin başkenti Pretoria'dır?",
+                "a_sikki": "Gana",
+                "b_sikki": "Nijerya",
+                "c_sikki": "Güney Afrika",
+                "d_sikki": "Kenya",
+                "cevap": "C"
+            }
+            ,
+            {
+                "soru": "Hangi yazar 'Bin Dokuz Yüz Seksen Dört' adlı distopik romanın yazarıdır?",
+                "a_sikki": "George Orwell",
+                "b_sikki": "Aldous Huxley",
+                "c_sikki": "Ray Bradbury",
+                "d_sikki": "Philip K. Dick",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi yazar 'Bülbülü Öldürmek' adlı romanın yazarıdır?",
+                "a_sikki": "Harper Lee",
+                "b_sikki": "J.D. Salinger",
+                "c_sikki": "John Steinbeck",
+                "d_sikki": "Haruki Murakami",
+                "cevap": "A"
+            }
+            ,
+
+            {
+                "soru": "Hangi yıl Türkiye'de ilk kadın milletvekili seçilmiştir?",
+                "a_sikki": "1923",
+                "b_sikki": "1930",
+                "c_sikki": "1935",
+                "d_sikki": "1950",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü fizikçi, tarih boyunca evrende neler olabileceğini sorgulayan 'Büyük Patlama' teorisini öne sürmüştür?",
+                "a_sikki": "Niels Bohr",
+                "b_sikki": "Stephen Hawking",
+                "c_sikki": "Galileo Galilei",
+                "d_sikki": "Georges Lemaître",
+                "cevap": "D"
+            }
+            ,
+            {
+                "soru": "Hangi ülkenin bayrağında sadece bir renk bulunur?",
+                "a_sikki": "Libya",
+                "b_sikki": "Monako",
+                "c_sikki": "Polonya",
+                "d_sikki": "Endonezya",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü müzik grubu 'Stairway to Heaven' şarkısıyla tanınır?",
+                "a_sikki": "The Rolling Stones",
+                "b_sikki": "Led Zeppelin",
+                "c_sikki": "The Beatles",
+                "d_sikki": "Queen",
+                "cevap": "B"
+            }
+            ,
+
+            {
+                "soru": "Hangi yazar 'Yüzüklerin Efendisi' adlı epik fantastik roman serisinin yazarıdır?",
+                "a_sikki": "J.K. Rowling",
+                "b_sikki": "J.R.R. Tolkien",
+                "c_sikki": "C.S. Lewis",
+                "d_sikki": "George R.R. Martin",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü ressam, 'Doğaüstücülük' akımının öncülerindendir ve Gece Gözlüğü adlı eseriyle tanınır?",
+                "a_sikki": "René Magritte",
+                "b_sikki": "Joan Miró",
+                "c_sikki": "Yves Klein",
+                "d_sikki": "Max Ernst",
+                "cevap": "A"
+            }
+            , {
+                "soru": "Hangi matematiksel sabit, bir dairenin çevresinin çapına oranını ifade eder?",
+                "a_sikki": "Altın Oran (φ)",
+                "b_sikki": "Pi (π)",
+                "c_sikki": "Euler sayısı (e)",
+                "d_sikki": "Asal sayı",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü bilim adamı, 'Büyük Patlama' teorisini geliştirmiştir ve evrenin genişlemesini açıklamıştır?",
+                "a_sikki": "Edwin Hubble",
+                "b_sikki": "Alan Guth",
+                "c_sikki": "Max Planck",
+                "d_sikki": "Georges Lemaître",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü yazar '1984' adlı distopik romanın yazarıdır?",
+                "a_sikki": "Aldous Huxley",
+                "b_sikki": "George Orwell",
+                "c_sikki": "Ray Bradbury",
+                "d_sikki": "Philip K. Dick",
+                "cevap": "B"
+            }
+            ,
+
+            {
+                "soru": "Hangi ünlü ressam, 'Yıldızlı Gece' adlı tablosuyla tanınır?",
+                "a_sikki": "Claude Monet",
+                "b_sikki": "Vincent van Gogh",
+                "c_sikki": "Edvard Munch",
+                "d_sikki": "Pablo Picasso",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü bilim adamı, modern fizikteki çifte sarmal yapısının keşfinde önemli bir rol oynamıştır?",
+                "a_sikki": "Erwin Schrödinger",
+                "b_sikki": "Niels Bohr",
+                "c_sikki": "James Clerk Maxwell",
+                "d_sikki": "Max Planck",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü yazar 'Karamazov Kardeşler' adlı eserin yazarıdır?",
+                "a_sikki": "Fyodor Dostoyevski",
+                "b_sikki": "Leo Tolstoy",
+                "c_sikki": "Anton Çehov",
+                "d_sikki": "Ivan Turgenev",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü bilim adamı, radyoaktivitenin keşfinde önemli bir rol oynamıştır?",
+                "a_sikki": "Marie Curie",
+                "b_sikki": "Niels Bohr",
+                "c_sikki": "Max Planck",
+                "d_sikki": "Ernest Rutherford",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü fizik yasası, bir sıvının basıncının, sıvının altındaki noktadan bağımsız olarak uygulandığını belirtir?",
+                "a_sikki": "Bernoulli Prensibi",
+                "b_sikki": "Archimedes Prensibi",
+                "c_sikki": "Pascal'ın Prensibi",
+                "d_sikki": "Boyle's Yasası",
+                "cevap": "C"
+            },
+        ];
+        // Kullanılacak değişkenler
+        let uzmanadayi_sorunun_cevabi = "";
+        let uzmanadayi_puan = 0;
+        let uzmanadayi_dogru_sayisi = 0;
+        let uzmanadayi_yanlis_sayisi = 0;
+        let uzmanadayi_soru_numarasi = 0;
+
+
+        function uzmanadayi_shuffleArray(array) {
+          
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+
+        function uzmanadayi_sorulariKaristir() {
+            
+            uzmanadayi_shuffleArray(uzmanadayi_sorular);
+        }
+
+        function uzmanadayi_soru_getir(uzmanadayi_s_no) {
+            if (uzmanadayi_s_no === 0) {
+                uzmanadayi_sorulariKaristir();
+            }
+
+            document.getElementById("soru_metni_uzmanadayi").innerHTML = uzmanadayi_sorular[uzmanadayi_s_no].soru;
+            document.getElementById("a_sikki_uzmanadayi").innerHTML = uzmanadayi_sorular[uzmanadayi_s_no].a_sikki;
+            document.getElementById("b_sikki_uzmanadayi").innerHTML = uzmanadayi_sorular[uzmanadayi_s_no].b_sikki;
+            document.getElementById("c_sikki_uzmanadayi").innerHTML = uzmanadayi_sorular[uzmanadayi_s_no].c_sikki;
+            document.getElementById("d_sikki_uzmanadayi").innerHTML = uzmanadayi_sorular[uzmanadayi_s_no].d_sikki;
+            uzmanadayi_sorunun_cevabi = uzmanadayi_sorular[uzmanadayi_s_no].cevap;
+        }
+
+        if (uzmanadayi_s_no === 10) {
+            const nextLevelButton = document.createElement("button");
+            nextLevelButton.textContent = "Next Level";
+            nextLevelButton.onclick = function () {
+                closeModal('uzmanadayiModal');
+                openModal('uzmanModal');
+            };
+
+            document.getElementById("a_sikki_uzmanadayi").onclick = null;
+            document.getElementById("b_sikki_uzmanadayi").onclick = null;
+            document.getElementById("c_sikki_uzmanadayi").onclick = null;
+            document.getElementById("d_sikki_uzmanadayi").onclick = null;
+
+            document.getElementById("soru_kutusu_uzmanadayi").appendChild(nextLevelButton);
+        }
+
+
+        function uzmanadayi_skor_yaz() {
+            document.getElementById("d_sayisi_uzmanadayi").innerHTML = uzmanadayi_dogru_sayisi;
+            document.getElementById("y_sayisi_uzmanadayi").innerHTML = uzmanadayi_yanlis_sayisi;
+            document.getElementById("p_yazisi_uzmanadayi").innerHTML = uzmanadayi_puan;
+        }
+
+        function uzmanadayi_cevaplandi(hangi_sik) {
+            if (uzmanadayi_soru_numarasi < 10) {
+                const uzmanadayi_kullanici_secimi = hangi_sik.getAttribute("data-secim");
+
+                if (uzmanadayi_sorunun_cevabi.trim().toUpperCase() === uzmanadayi_kullanici_secimi.trim().toUpperCase()) {
+                    uzmanadayi_puan = uzmanadayi_puan + 50;
+                    uzmanadayi_dogru_sayisi++;
+                    uzmanadayi_skor_yaz();
+                } else {
+                    uzmanadayi_puan = uzmanadayi_puan - 50;
+                    uzmanadayi_yanlis_sayisi++;
+                    uzmanadayi_skor_yaz();
+                }
+
+                if (uzmanadayi_soru_numarasi === 9) {
+                    const nextLevelButton = document.createElement("button");
+                    nextLevelButton.textContent = "Next Level";
+                    nextLevelButton.onclick = function () {
+                        closeModal('uzmanadayiModal');
+                        openModal('uzmanModal');
+                    };
+
+                    document.getElementById("a_sikki_uzmanadayi").onclick = null;
+                    document.getElementById("b_sikki_uzmanadayi").onclick = null;
+                    document.getElementById("c_sikki_uzmanadayi").onclick = null;
+                    document.getElementById("d_sikki_uzmanadayi").onclick = null;
+
+                    document.getElementById("soru_kutusu_uzmanadayi").appendChild(nextLevelButton);
+                }
+
+                if (uzmanadayi_soru_numarasi < 9) {
+                    uzmanadayi_soru_ilerlet();
+                }
+            }
+        }
+
+        function uzmanadayi_soru_ilerlet() {
+            uzmanadayi_soru_numarasi++;
+            uzmanadayi_soru_getir(uzmanadayi_soru_numarasi);
+        }
+    </script>
+
+    <script>
+        uzman_sorular = [
+            {
+                "soru": "Hangi element, doğada tek başına diğer elementlerle bileşik yapmadan bulunur?",
+                "a_sikki": "Oksijen",
+                "b_sikki": "Altın",
+                "c_sikki": "Hidrojen",
+                "d_sikki": "Gümüş",
+                "cevap": "C"
+            }
+            ,
+
+
+            {
+                "soru": "Hangi matematiksel problem, Euler'in Topoloji Teoremi'nin bir sonucudur?",
+                "a_sikki": "Fermat'ın Son Teoremi",
+                "b_sikki": "P=NP Problemi",
+                "c_sikki": "Riemann Hipotezi",
+                "d_sikki": "Four Color Theorem",
+                "cevap": "D"
+            }
+            ,
+
+            {
+                "soru": "Hangi ünlü bilim adamı, modern genetik biliminin öncülerinden biridir ve DNA'nın yapısını keşfetmiştir?",
+                "a_sikki": "Gregor Mendel",
+                "b_sikki": "Francis Crick",
+                "c_sikki": "James Watson",
+                "d_sikki": "Rosalind Franklin",
+                "cevap": "B"
+            }
+            ,
+
+            {
+                "soru": "Hangi kara delik türü, evrenin doğasını anlamamıza yardımcı olan 'Hawking Radyasyonu'nu üretebilir?",
+                "a_sikki": "Süper kütleli kara delik",
+                "b_sikki": "Orta kütleli kara delik",
+                "c_sikki": "Mini kara delik",
+                "d_sikki": "Primordial kara delik",
+                "cevap": "D"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü filozof, 'Kategorik İmperatif' kavramını ortaya atmıştır?",
+                "a_sikki": "John Locke",
+                "b_sikki": "Immanuel Kant",
+                "c_sikki": "John Stuart Mill",
+                "d_sikki": "Friedrich Nietzsche",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü astronom, evrenin genişlemesini keşfeden gözlemleri yapmış ve 'kırmızıya kayma' fenomenini açıklamıştır?",
+                "a_sikki": "Edwin Hubble",
+                "b_sikki": "Galileo Galilei",
+                "c_sikki": "Johannes Kepler",
+                "d_sikki": "Tycho Brahe",
+                "cevap": "A"
+            }
+            ,
+
+            {
+                "soru": "Hangi ünlü bilim adamı, evrim teorisini bağımsız olarak Charles Darwin ile birlikte geliştirmiştir?",
+                "a_sikki": "Alfred Russel Wallace",
+                "b_sikki": "Thomas Huxley",
+                "c_sikki": "Gregor Mendel",
+                "d_sikki": "Louis Pasteur",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi fiziksel sabit, evrendeki temel kuvvetlerin birleşimini açıklamak için 'Birleşik Alan Teorisi'nde önemli bir rol oynar?",
+                "a_sikki": "Planck Sabiti",
+                "b_sikki": "Boltzmann Sabiti",
+                "c_sikki": "Gravitasyonel Sabit",
+                "d_sikki": "Elektromanyetik Sabit",
+                "cevap": "C"
+            }
+            ,
+            {
+                "soru": "Hangi kimyasal element, bir nötron yakalayarak bir protona dönüşen doğal bir radyoaktif bozunma sürecine sahiptir?",
+                "a_sikki": "Uranium-238",
+                "b_sikki": "Plutonyum-239",
+                "c_sikki": "Thorium-232",
+                "d_sikki": "Polonium-210",
+                "cevap": "D"
+            }
+            ,
+            {
+                "soru": "Hangi organik bileşen, canlı hücrelerin enerji üretiminde anahtar rol oynar?",
+                "a_sikki": "Karbonhidrat",
+                "b_sikki": "Protein",
+                "c_sikki": "Lipit",
+                "d_sikki": "Nükleik Asit",
+                "cevap": "A"
+            }
+            ,
+
+            {
+                "soru": "Hangi ünlü fizik yasası, bir yükün manyetik alan içindeki hareketini açıklar?",
+                "a_sikki": "Ampère Kanunu",
+                "b_sikki": "Faraday'ın Indüksiyon Yasası",
+                "c_sikki": "Gauss'un Yasası",
+                "d_sikki": "Coulomb Yasası",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü bilim adamı, 'Genel Görelilik Teorisi'ni formüle etmiştir?",
+                "a_sikki": "Isaac Newton",
+                "b_sikki": "Niels Bohr",
+                "c_sikki": "Galileo Galilei",
+                "d_sikki": "Albert Einstein",
+                "cevap": "D"
+            }
+            ,
+            {
+                "soru": "Hangi kimyasal element, doğada serbest olarak bulunan tek gazdır?",
+                "a_sikki": "Nitrogen",
+                "b_sikki": "Oxygen",
+                "c_sikki": "Helium",
+                "d_sikki": "Hydrogen",
+                "cevap": "D"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü fizikçi, 'Kara Delikler ve Zamanın Kısa Tarihi' kitaplarıyla tanınır?",
+                "a_sikki": "Stephen Hawking",
+                "b_sikki": "Kip Thorne",
+                "c_sikki": "Roger Penrose",
+                "d_sikki": "Brian Greene",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü filozof, 'Varlık ve Zaman' adlı eseriyle tanınır?",
+                "a_sikki": "Martin Heidegger",
+                "b_sikki": "Jean-Paul Sartre",
+                "c_sikki": "Friedrich Nietzsche",
+                "d_sikki": "Søren Kierkegaard",
+                "cevap": "A"
+            }
+            ,
+            {
+                "soru": "Hangi matematiksel problem, matematikteki en eski açık problemlerden biridir ve 'Riemann Hipotezi' ile ilgili bir bağlantısı vardır?",
+                "a_sikki": "Fermat'ın Son Teoremi",
+                "b_sikki": "P=NP Problemi",
+                "c_sikki": "Collatz Sorunu",
+                "d_sikki": "Goldbach Sanısı",
+                "cevap": "C"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü kimyager, modern kimyanın babası olarak kabul edilir ve elementlerin periyodik tablosunu oluşturmuştur?",
+                "a_sikki": "Marie Curie",
+                "b_sikki": "Antoine Lavoisier",
+                "c_sikki": "Dmitri Mendeleev",
+                "d_sikki": "Robert Boyle",
+                "cevap": "C"
+            }
+            ,
+            {
+                "soru": "Hangi astronom, ilk defa bir yıldızın bir gezegen etrafında döndüğünü gözlemleyen kişidir?",
+                "a_sikki": "Nicolaus Copernicus",
+                "b_sikki": "Galileo Galilei",
+                "c_sikki": "Johannes Kepler",
+                "d_sikki": "Tycho Brahe",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü matematikçi, karmaşık sayıları tanımlayan formülü ortaya koymuştur?",
+                "a_sikki": "Euclid",
+                "b_sikki": "Leonhard Euler",
+                "c_sikki": "Isaac Newton",
+                "d_sikki": "Pythagoras",
+                "cevap": "B"
+            }
+            ,
+            {
+                "soru": "Hangi ünlü fizik yasası, bir yükün elektrik alan içinde hissettiği kuvveti ifade eder?",
+                "a_sikki": "Ohm'un Yasası",
+                "b_sikki": "Coulomb Yasası",
+                "c_sikki": "Faraday'ın Indüksiyon Yasası",
+                "d_sikki": "Ampère Kanunu",
+                "cevap": "B"
+            }
+            ,
+        ];
+        // Kullanılacak değişkenler
+        let uzman_sorunun_cevabi = "";
+        let uzman_puan = 0;
+        let uzman_dogru_sayisi = 0;
+        let uzman_yanlis_sayisi = 0;
+        let uzman_soru_numarasi = 0;
+
+
+        function uzman_shuffleArray(array) {
+           
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+
+        function uzman_sorulariKaristir() {
+            // Soruları karıştır
+            uzman_shuffleArray(uzman_sorular);
+        }
+
+        function uzman_soru_getir(uzman_s_no) {
+            if (uzman_s_no === 0) {
+                uzman_sorulariKaristir();
+            }
+
+            document.getElementById("soru_metni_uzman").innerHTML = uzman_sorular[uzman_s_no].soru;
+            document.getElementById("a_sikki_uzman").innerHTML = uzman_sorular[uzman_s_no].a_sikki;
+            document.getElementById("b_sikki_uzman").innerHTML = uzman_sorular[uzman_s_no].b_sikki;
+            document.getElementById("c_sikki_uzman").innerHTML = uzman_sorular[uzman_s_no].c_sikki;
+            document.getElementById("d_sikki_uzman").innerHTML = uzman_sorular[uzman_s_no].d_sikki;
+            uzman_sorunun_cevabi = uzman_sorular[uzman_s_no].cevap;
+        }
+
+        function uzman_skor_yaz() {
+            document.getElementById("d_sayisi_uzman").innerHTML = uzman_dogru_sayisi;
+            document.getElementById("y_sayisi_uzman").innerHTML = uzman_yanlis_sayisi;
+            document.getElementById("p_yazisi_uzman").innerHTML = uzman_puan;
+        }
+
+        function uzman_cevaplandi(hangi_sik) {
+            if (uzman_soru_numarasi < 10) {
+                const uzman_kullanici_secimi = hangi_sik.getAttribute("data-secim");
+
+                if (uzman_sorunun_cevabi.trim().toUpperCase() === uzman_kullanici_secimi.trim().toUpperCase()) {
+                    uzman_puan = gelisen_puan + 50;
+                    uzman_dogru_sayisi++;
+                    uzman_skor_yaz();
+                } else {
+                    uzman_puan = uzman_puan - 50;
+                    uzman_yanlis_sayisi++;
+                    uzman_skor_yaz();
+                }
+
+                if (uzman_soru_numarasi === 9) {
+                    const finishLevelButton = document.createElement("button");
+                    finishLevelButton.textContent = "Finish Level";
+                    finishLevelButton.onclick = function () {
+                        closeModal('uzmanModal');
+                        toplamSkorBoard();
+                    };
+
+                    document.getElementById("a_sikki_uzman").onclick = null;
+                    document.getElementById("b_sikki_uzman").onclick = null;
+                    document.getElementById("c_sikki_uzman").onclick = null;
+                    document.getElementById("d_sikki_uzman").onclick = null;
+
+                    document.getElementById("soru_kutusu_uzman").appendChild(finishLevelButton);
+                }
+
+
+                if (uzman_soru_numarasi < 9) {
+                    uzman_soru_ilerlet();
+                }
+            }
+        }
+
+        function uzman_soru_ilerlet() {
+            uzman_soru_numarasi++;
+            uzman_soru_getir(uzman_soru_numarasi);
+        }
+    </script>
+    <script>
+        // Doğru, yanlış ve puan sayılarını tutacak değişkenler
+        var toplamDogru = 0;
+        var toplamYanlis = 0;
+        var toplamPuan = 0;
+
+        function toplamSkorBoard() {
+            // Tüm modallardan doğru, yanlış ve puan bilgilerini topla
+            toplamDogru = dogru_sayisi + acemi_dogru_sayisi + gelisen_dogru_sayisi + uzmanadayi_dogru_sayisi + uzman_dogru_sayisi;
+            toplamYanlis = yanlis_sayisi + acemi_yanlis_sayisi + gelisen_yanlis_sayisi + uzmanadayi_yanlis_sayisi + uzman_yanlis_sayisi;
+            toplamPuan = puan + acemi_puan + gelisen_puan + uzmanadayi_puan + uzman_puan;
+
+            // Skorları modal üzerine yazdır
+            document.getElementById("d_sayisi_toplam").innerText = toplamDogru;
+            document.getElementById("y_sayisi_toplam").innerText = toplamYanlis;
+            document.getElementById("p_yazisi_toplam").innerText = toplamPuan;
+
+            // toplamSkorBoard modalını aç
+            openModal('toplamSkorBoard');
+        }
+
+
+
+    </script>
+
+
+    <script src="script.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+
+    <div id="background-image"></div>
+    <div id="start-page">
+      
+             <button id="howToPlayBtn" onclick="openModal('howToPlayModal')">Nasıl Oynanır?</button>
+        <button id="startGameBtn" onclick="startGame()">Oyuna Başla!</button>
+    </div>
+    <div id="quiz-container" style="display: none;">
+        
+    </div>
+
+    
+    <div id="howToPlayModal" class="modal howToPlayModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('howToPlayModal')">&times;</span>
+            <h2>Nasıl Oynanır?</h2>
+            <p>Bilgi Yarışması Oyunu, genel kültür sorularını içeren bir yarışmadır. Aşağıda oyunun temel kurallarını bulabilirsiniz:</p>
+        
+            <ol>
+                <li>Oyun 5 farklı seviyede gerçekleşir: Çaylak-Acemi-Gelişen-Uzman Adayı-Uzman şeklinde. Her seviyede farklı sorular bulunmaktadır.</li>
+                <li>Oyuna başlamak için "Oyuna Başla!" butonuna tıklayın.</li>
+                <li>Her soru için 4 farklı seçenek bulunmaktadır (A, B, C, D).</li>
+                <li>Doğru cevap verdiğinizde puan kazanırsınız. Yanlış cevap verdiğinizde puan kaybedersiniz.</li>
+                <li> Bölüm girişlerinde Yarışa Başla butonları soruları ekrana getirir. Her Seviyede toplamda 10 soru bulunmaktadır.Seviyeleri tamamladıktan sonra "Next Level" butonuna tıklayarak Yeni seviyeye geçebilirsiniz.</li>
+                <li>Son seviyeyi tamamladıktan sonra oyunu bitirip skorunuzu görebilirsiniz.</li>
+            </ol>
+            
+            <p>Yarışma süresince eğlenceli vakit geçirmeniz dileğiyle!</p>
+           
+        </div>
+    </div>
+
+    <!-- Oyuna Başla Modal -->
+    <div id="startGameModal" class="modal startGameModal">
+        <div class="modal-content large">
+            <span class="close" onclick="closeModal('startGameModal')">&times;</span>
+            <button id="devamBtn" onclick="devam()">Devam</button>
+           
+        </div>
+    </div>
+
+    <!-- Yeni Modal -->
+    <div id="yeniModal" class="modal yeniModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('yeniModal')">&times;</span>
+            <button onclick="soru_getir(0)">Yarışa Başla</button>
+            <!-- SKOR BOARD -->
+            <div id="skor_board">
+                <div class="d_y_baslik"> Doğru:</div>
+                <div id="d_sayisi">-</div>
+                <div class="d_y_baslik"> Yanlış:</div>
+                <div id="y_sayisi">-</div>
+                <div id="puan">PUAN: </div>
+                <div id="p_yazisi">-</div>
+            </div>
+            <div id="soru_kutusu">
+                <div id="soru_metni">Soru Metni</div>
+                <div id="cevaplar">
+                    <div id="a_sikki" data-secim="A" onclick="cevaplandi(this)">A</div>
+                    <div id="b_sikki" data-secim="B" onclick="cevaplandi(this)">B</div>
+                    <div id="c_sikki" data-secim="C" onclick="cevaplandi(this)">C</div>
+                    <div id="d_sikki" data-secim="D" onclick="cevaplandi(this)">D</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acemi Modal -->
+    <div id="acemiModal" class="modal acemiModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('acemiModal')">&times;</span>
+            <button onclick="acemi_soru_getir(0)"> Yarışa Başla</button>
+            <div id="skor_board_acemi">
+                <div class="d_y_baslik"> Doğru:</div>
+                <div id="d_sayisi_acemi">-</div>
+                <div class="d_y_baslik"> Yanlış:</div>
+                <div id="y_sayisi_acemi">-</div>
+                <div id="puan_acemi">PUAN: </div>
+                <div id="p_yazisi_acemi">-</div>
+            </div>
+            <div id="soru_kutusu_acemi">
+                <div id="soru_metni_acemi">Soru Metni</div>
+                <div id="cevaplar_acemi">
+                    <div id="a_sikki_acemi" data-secim="A" onclick="acemi_cevaplandi(this)">A</div>
+                    <div id="b_sikki_acemi" data-secim="B" onclick="acemi_cevaplandi(this)">B</div>
+                    <div id="c_sikki_acemi" data-secim="C" onclick="acemi_cevaplandi(this)">C</div>
+                    <div id="d_sikki_acemi" data-secim="D" onclick="acemi_cevaplandi(this)">D</div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+
+    <!-- Gelisen Modal -->
+    <div id="gelisenModal" class="modal gelisenModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('gelisenModal')">&times;</span>
+            <button onclick="gelisen_soru_getir(0)"> Yarışa Başla</button>
+            <div id="skor_board_gelisen">
+                <div class="d_y_baslik"> Doğru:</div>
+                <div id="d_sayisi_gelisen">-</div>
+                <div class="d_y_baslik"> Yanlış:</div>
+                <div id="y_sayisi_gelisen">-</div>
+                <div id="puan_gelisen">PUAN: </div>
+                <div id="p_yazisi_gelisen">-</div>
+            </div>
+            <div id="soru_kutusu_gelisen">
+                <div id="soru_metni_gelisen">Soru Metni</div>
+                <div id="cevaplar_gelisen">
+                    <div id="a_sikki_gelisen" data-secim="A" onclick="gelisen_cevaplandi(this)">A</div>
+                    <div id="b_sikki_gelisen" data-secim="B" onclick="gelisen_cevaplandi(this)">B</div>
+                    <div id="c_sikki_gelisen" data-secim="C" onclick="gelisen_cevaplandi(this)">C</div>
+                    <div id="d_sikki_gelisen" data-secim="D" onclick="gelisen_cevaplandi(this)">D</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- UzmanAdayi Modal -->
+    <div id="uzmanadayiModal" class="modal uzmanadayiModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('uzmanadayiModal')">&times;</span>
+            <button onclick="uzmanadayi_soru_getir(0)"> Yarışa Başla</button>
+            <div id="skor_board_uzmanadayi">
+                <div class="d_y_baslik"> Doğru:</div>
+                <div id="d_sayisi_uzmanadayi">-</div>
+                <div class="d_y_baslik"> Yanlış:</div>
+                <div id="y_sayisi_uzmanadayi">-</div>
+                <div id="puan_uzmanadayi">PUAN: </div>
+                <div id="p_yazisi_uzmanadayi">-</div>
+            </div>
+            <div id="soru_kutusu_uzmanadayi">
+                <div id="soru_metni_uzmanadayi">Soru Metni</div>
+                <div id="cevaplar_uzmanadayi">
+                    <div id="a_sikki_uzmanadayi" data-secim="A" onclick="uzmanadayi_cevaplandi(this)">A</div>
+                    <div id="b_sikki_uzmanadayi" data-secim="B" onclick="uzmanadayi_cevaplandi(this)">B</div>
+                    <div id="c_sikki_uzmanadayi" data-secim="C" onclick="uzmanadayi_cevaplandi(this)">C</div>
+                    <div id="d_sikki_uzmanadayi" data-secim="D" onclick="uzmanadayi_cevaplandi(this)">D</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Uzman Modal -->
+    <div id="uzmanModal" class="modal uzmanModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('uzmanModal')">&times;</span>
+            <button onclick="uzman_soru_getir(0)"> Yarışa Başla</button>
+            <div id="skor_board_uzman">
+                <div class="d_y_baslik"> Doğru:</div>
+                <div id="d_sayisi_uzman">-</div>
+                <div class="d_y_baslik"> Yanlış:</div>
+                <div id="y_sayisi_uzman">-</div>
+                <div id="puan_uzman">PUAN: </div>
+                <div id="p_yazisi_uzman">-</div>
+            </div>
+            <div id="soru_kutusu_uzman">
+                <div id="soru_metni_uzman">Soru Metni</div>
+                <div id="cevaplar_uzman">
+                    <div id="a_sikki_uzman" data-secim="A" onclick="uzman_cevaplandi(this)">A</div>
+                    <div id="b_sikki_uzman" data-secim="B" onclick="uzman_cevaplandi(this)">B</div>
+                    <div id="c_sikki_uzman" data-secim="C" onclick="uzman_cevaplandi(this)">C</div>
+                    <div id="d_sikki_uzman" data-secim="D" onclick="uzman_cevaplandi(this)">D</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Toplam Skor Board Modal -->
+    <div id="toplamSkorBoard" class="modal toplamSkorBoard">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('toplamSkorBoard')">&times;</span>
+            <div id="skor_board_toplam">
+                <div class="d_y_baslik"> Toplam Doğru:</div>
+                <div id="d_sayisi_toplam">-</div>
+                <div class="d_y_baslik"> Toplam Yanlış:</div>
+                <div id="y_sayisi_toplam">-</div>
+                <div id="puan_toplam">Toplam PUAN: </div>
+                <div id="p_yazisi_toplam">-</div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
